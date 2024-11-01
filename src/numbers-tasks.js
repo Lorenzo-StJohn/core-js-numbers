@@ -318,8 +318,15 @@ function getSumOfDigits(num) {
  *   16  => true
  *   15  => false
  */
-function isPowerOfTwo(/* num */) {
-  throw new Error('Not implemented');
+function isPowerOfTwo(num) {
+  let powerOfTwo = 1;
+  while (powerOfTwo <= num) {
+    if (powerOfTwo === num) {
+      return true;
+    }
+    powerOfTwo *= 2;
+  }
+  return false;
 }
 
 /**
