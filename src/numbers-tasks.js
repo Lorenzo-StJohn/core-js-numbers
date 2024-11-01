@@ -568,8 +568,16 @@ function getIntegerPartNumber(number) {
  * 1, 2, 3       => 6
  * 0.1, 0.2, 0.3 => 0.6
  */
-function getSumOfNumbers(/* x1, x2, x3 */) {
-  throw new Error('Not implemented');
+function getSumOfNumbers(x1, x2, x3) {
+  let power = 1;
+  while (
+    x1 * power !== Math.trunc(x1 * power) ||
+    x2 * power !== Math.trunc(x2 * power) ||
+    x3 * power !== Math.trunc(x3 * power)
+  ) {
+    power *= 10;
+  }
+  return (x1 * power + x2 * power + x3 * power) / power;
 }
 
 /**
